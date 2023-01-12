@@ -25,7 +25,11 @@ const App: React.FC = () => {
         setTodoInput={setTodoInput}
         handleAdd={handleAdd}
       />
-      <TodoList todo={todo} setTodo={setTodo} />
+      {todo.length > 0 ? (
+        <TodoList todo={todo} setTodo={setTodo} />
+      ) : (
+        <h2>No Todos Found.</h2>
+      )}
     </div>
   );
 };
